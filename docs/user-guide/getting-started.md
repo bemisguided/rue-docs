@@ -50,7 +50,7 @@ rue.module('MyDependency')
   .done();
 ```
 
-Here the both the modules are configured into the **rue** inversion of control
+Here the both the modules are configured into the **rue** dependency injection
 container. `MyModule` is defined to resolve to `require('./MyModule')`
 and requiring the dependency `MyDependency` while `MyDependency` is defined to
 resolve to `require('./MyDependency')`.

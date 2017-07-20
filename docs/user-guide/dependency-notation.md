@@ -15,7 +15,7 @@ available the dependency parameter is replaced with `undefined`
 The following example shows a configuration demonstrating both uses of
 *Dependency Notation*:
 
-```javascript
+```javascript hl_lines="6 11"
 // rue.js
 const rue = require('rue');
 

@@ -1,7 +1,5 @@
 site_name: rue
-#theme: readthedocs
 theme: 'material'
-#theme_dir: '../mkdocs-material/material'
 
 copyright: 'Copyright &copy; 2017 - 2018 Martin Crawford'
 
@@ -15,13 +13,20 @@ pages:
       - Lifecycle Functions: 'user-guide/lifecycle-functions.md'
       - Test Container: 'user-guide/test-container.md'
     - Reference:
-      - 'rue.factory()': 'reference/rue-factory.md'
-      - 'rue.module()': 'reference/rue-module.md'
-      - 'rue.service()': 'reference/rue-service.md'
-      - 'class Builder': 'reference/class-builder.md'
-      - 'class FactoryBuilder': 'reference/class-factory-builder.md'
-      - 'class ModuleBuilder': 'reference/class-module-builder.md'
-      - 'class ServiceBuilder': 'reference/class-service-builder.md'
+      - 'All': 'reference/index.md'
+      - 'Module':
+        - 'rue': 'reference/rue.md'
+        - 'rue.Container': 'reference/rue-container.md'
+        - 'rue.factory()': 'reference/rue-factory.md'
+        - 'rue.module()': 'reference/rue-module.md'
+        - 'rue.service()': 'reference/rue-service.md'
+      - 'Classes':
+        - 'Builder class': 'reference/class-builder.md'
+        - 'Container class': 'reference/class-container.md'
+        - 'FactoryBuilder class': 'reference/class-factory-builder.md'
+        - 'ModuleBuilder class': 'reference/class-module-builder.md'
+        - 'ServiceBuilder class': 'reference/class-service-builder.md'
+    - License: license.md
 
 extra:
   palette:

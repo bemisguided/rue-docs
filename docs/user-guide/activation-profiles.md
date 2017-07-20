@@ -5,7 +5,7 @@ another for testing where stubs or mocks are used on the later.
 
 The following is an example configuration that utilizes *Activation Profiles*:
 
-```javascript
+```javascript hl_lines="6 11"
 // rue.js
 const rue = require('rue');
 
@@ -31,9 +31,9 @@ module when the `production` profile is active while a stub is used when the
 available under all profiles, therefore, `MyService` is always available.
 
 The following example shows how the `production` profile is activated using the
-**rue** inversion of control container:
+**rue** dependency injection container:
 
-```javascript
+```javascript hl_lines="4"
 // rue.js
 const rue = require('rue');
 
@@ -52,7 +52,7 @@ of a profile by using the not operator (`!`) as part of the declaration.
 The following example shows how a dependency is configured when the `test`
 profile is *not* active:
 
-```javascript
+```javascript hl_lines="5"
 const rue = require('rue');
 
 rue.module('DatabaseConnection')
@@ -74,7 +74,7 @@ and `staging`.
 The following example shows how runtime environment variable profiles are
 configured:
 
-```javascript
+```javascript hl_lines="4"
 // rue.js
 const rue = require('rue');
 

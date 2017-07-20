@@ -12,7 +12,7 @@ be changed when configured with **rue**.
 The following example shows how the `init()` function can be renamed to
 `start()`:
 
-```javascript
+```javascript hl_lines="6"
 // rue.js
 const rue = require('rue');
 
@@ -21,6 +21,12 @@ rue.module('MyModule')
   .lifecycleInit('start')
   .done();
 ```
+
+!!! seealso "See Also"
+    [rue.module()](../reference/rue-module.md) and 
+    [ModuleBuilder](../reference/class-module-builder.md) in the *Reference*
+    section for all configuration options available to the *Module Injection*
+    pattern.
 
 The `init()` function can be synchronous or asynchronous. When asynchronous the
 `init()` function need only to return a `Promise` and **rue** will wait for the
@@ -52,7 +58,7 @@ As nodejs modules are essentially singleton instances all nodejs modules
 configured in this matter are managed singletons by **rue**.
 
 ## Service Injection
-The *Service* inject pattern essentially constructs an instance of the
+The *Service Injection* pattern essentially constructs an instance of the
 dependency by passing injected dependencies via the constructor.
 
 The following example shows how a *Service* might be defined using the ES6
@@ -79,13 +85,19 @@ rue.service('MyService')
   .done();
 ```
 
+!!! seealso "See Also"
+    [rue.service()](../reference/rue-service.md) and
+    [ServiceBuilder](../reference/class-service-builder.md) in the *Reference*
+    section for all configuration options available to the *Service Injection*
+    pattern.
+
 By default all *Service* dependencies are managed by **rue** as singletons,
 however, this can be overridden so that prior to being injected to other
 dependencies a new instance is constructed.
 
 The following example shows how a *Service* is configured to be a non-singleton:
 
-```javascript
+```javascript hl_lines="7"
 // rue.js
 const rue = require('rue');
 
@@ -122,6 +134,11 @@ rue.factory('MyFactory')
   .done();
 ```
 
+!!! seealso "See Also"
+    [FactoryBuilder](../reference/class-factory-builder.md) in the *Reference*
+    section for all configuration options available to the *Factory Injection*
+    pattern.
+
 The factory function can be synchronous or asynchronous. When asynchronous the
 factory function need only to return a `Promise` and **rue** will wait for the
 `Promise` to complete before moving to the next dependency to initialize. This
@@ -154,7 +171,7 @@ dependencies a the factory function is called to retrieve a new instance.
 
 The following example shows how a *Factory* is configured to be a non-singleton:
 
-```javascript
+```javascript hl_lines="7"
 // rue.js
 const rue = require('rue');
 

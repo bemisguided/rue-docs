@@ -29,9 +29,9 @@ unless configured otherwise.
 
 | Name | Type | Attribute | Description |
 | ---- | ---- | --------- | ----------- |
-| `singleton` | `boolean` | Required | `true` indicates the dependency is a singleton |
+| `singleton` | `boolean` | Required | `true` indicates the dependency is a singleton. |
 
-**Return:**
+**Returns:**
 
 [Builder](./class-builder.md) to allow configuration chaining
 

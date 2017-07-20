@@ -1,4 +1,6 @@
-Configures a dependency following the [Factory Injection Pattern](../user-guide/injection-patterns.md#factory-injection).
+Configures a dependency following the
+[Factory Injection](../user-guide/injection-patterns.md#factory-injection)
+pattern. This class is accessible from [rue.factory()](./rue-factory.md).
 
 **Superclasses:**
 
@@ -8,26 +10,26 @@ Configures a dependency following the [Factory Injection Pattern](../user-guide/
 
 N/A
 
-## .useFunction()
-Configures the dependency to be either a singleton or non-singleton managed by
-the dependency injection container. By default, all dependencies are singletons
-unless configured otherwise.
+## Public Methods
+
+### .useFunction()
+Configures the factory function to use for a *Factory* dependency.
 
 **Signature:**
 
 ```javascript
-.useFunction(fn : Function) : Builder
+.useFunction(fn : Function) : FactoryBuilder
 ```
 
 **Parameters:**
 
 | Name | Type | Attribute | Description |
 | ---- | ---- | --------- | ----------- |
-| `fn` | `Function` | Required | Factory function to configure this dependency with |
+| `fn` | `Function` | Required | Factory function to configure the dependency with. |
 
-**Return:**
+**Returns:**
 
-[FactroyBuilder](./class-factory-builder.md) to allow configuration chaining
+[FactoryBuilder](./class-factory-builder.md) to allow configuration chaining
 
 **Example:**
 
@@ -36,6 +38,6 @@ unless configured otherwise.
 const rue = require('rue');
 
 rue.factory('MyFactory')
-  .useFunction(require('./MyModule.js').factoryFunction)
+  .useFunction(require('./MyFactory.js').factoryFunction)
   .done();
 ```
