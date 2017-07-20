@@ -1,8 +1,10 @@
+# ServiceBuilder Class
+
 Configures a dependency following the
 [Service Injection](../user-guide/injection-patterns.md#service-injection)
 pattern. This class is accessible from [rue.service()](./rue-service.md).
 
-## Public Methods
+## Methods
 
 ### .useObject()
 Configures the class or Object to use for a *Service* dependency.

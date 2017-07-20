@@ -10,12 +10,12 @@ The following is an example configuration that utilizes *Activation Profiles*:
 const rue = require('rue');
 
 rue.module('DatabaseConnection')
-  .useObject('./production/DatabaseConnection')
+  .useModule('./production/DatabaseConnection')
   .withProfiles('production')
   .done();
 
 rue.module('DatabaseConnection')
-  .useObject('./test/StubDatabaseConnection')
+  .useModule('./test/StubDatabaseConnection')
   .withProfiles('test')
   .done();
 
@@ -56,20 +56,21 @@ profile is *not* active:
 const rue = require('rue');
 
 rue.module('DatabaseConnection')
-  .useObject('./production/DatabaseConnection')
+  .useModule('./production/DatabaseConnection')
   .withProfiles('!test')
   .done();
 ```
 
-*Activation Profiles* can be activated at runtime environment variables.
-**rue** recognizes the standard `NODE_ENV` environment variable which is mapped
-to a profile names prefixed be `env:`. For example `export NODE_ENV=production`
-maps to `env:production`.
-
-Additionally, a comma separated list of profiles is accepted via the
-environment variable `RUE_PROFILES`. For example,
+*Activation Profiles* can be activated at runtime by environment variables. By
+utilizing the environment variable `RUE_PROFILES` with a comma separated list
+of profiles **rue** will resolve these profiles for activation. For example,
 `export RUE_PROFILES=production,staging` would enable the profiles `production`
 and `staging`.
+
+Additionally, **rue** recognizes the environment variable `NODE_ENV` – made
+popular by numerous nodejs libraries such as [express](http://expressjs.com/)
+– which is resolved to a profile names prefixed be `env:`. For example
+`export NODE_ENV=production` resolves to `env:production`.
 
 The following example shows how runtime environment variable profiles are
 configured:
@@ -86,3 +87,6 @@ rue.activate(rue.environment.profiles())
     console.log('Application has failed to be started', error);    
   });
 ```
+!!! seealso "See Also"
+    [Environment.profiles()](../reference/class-environment.md) in the
+    *Reference* section.

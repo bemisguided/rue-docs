@@ -41,12 +41,12 @@ presented below.
 const rue = require('rue');
 
 rue.module('MyModule')
-  .useObject(require('./MyModule'))
+  .useModule(require('./MyModule'))
   .withDependencies('MyDependency')
   .done();
 
 rue.module('MyDependency')
-  .useObject(require('./MyDependency'))
+  .useModule(require('./MyDependency'))
   .done();
 ```
 

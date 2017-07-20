@@ -17,13 +17,13 @@ The following example shows how the `init()` function can be renamed to
 const rue = require('rue');
 
 rue.module('MyModule')
-  .useObject(require('./MyModule'))
+  .useModule(require('./MyModule'))
   .lifecycleInit('start')
   .done();
 ```
 
 !!! seealso "See Also"
-    [rue.module()](../reference/rue-module.md) and 
+    [rue.module()](../reference/module-rue.md#module) and
     [ModuleBuilder](../reference/class-module-builder.md) in the *Reference*
     section for all configuration options available to the *Module Injection*
     pattern.
@@ -86,7 +86,7 @@ rue.service('MyService')
 ```
 
 !!! seealso "See Also"
-    [rue.service()](../reference/rue-service.md) and
+    [rue.service()](../reference/module-rue.md#service) and
     [ServiceBuilder](../reference/class-service-builder.md) in the *Reference*
     section for all configuration options available to the *Service Injection*
     pattern.
@@ -135,6 +135,7 @@ rue.factory('MyFactory')
 ```
 
 !!! seealso "See Also"
+    [rue.factory()](../reference/module-rue.md#factory) and
     [FactoryBuilder](../reference/class-factory-builder.md) in the *Reference*
     section for all configuration options available to the *Factory Injection*
     pattern.

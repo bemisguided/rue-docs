@@ -14,18 +14,15 @@ pages:
       - Test Container: 'user-guide/test-container.md'
     - Reference:
       - 'All': 'reference/index.md'
-      - 'Module':
-        - 'rue': 'reference/rue.md'
-        - 'rue.Container': 'reference/rue-container.md'
-        - 'rue.factory()': 'reference/rue-factory.md'
-        - 'rue.module()': 'reference/rue-module.md'
-        - 'rue.service()': 'reference/rue-service.md'
+      - 'Modules':
+        - 'rue': 'reference/module-rue.md'
       - 'Classes':
-        - 'Builder class': 'reference/class-builder.md'
-        - 'Container class': 'reference/class-container.md'
-        - 'FactoryBuilder class': 'reference/class-factory-builder.md'
-        - 'ModuleBuilder class': 'reference/class-module-builder.md'
-        - 'ServiceBuilder class': 'reference/class-service-builder.md'
+        - 'Builder': 'reference/class-builder.md'
+        - 'Container': 'reference/class-container.md'
+        - 'Environment': 'reference/class-environment.md'
+        - 'FactoryBuilder': 'reference/class-factory-builder.md'
+        - 'ModuleBuilder': 'reference/class-module-builder.md'
+        - 'ServiceBuilder': 'reference/class-service-builder.md'
     - License: license.md
 
 extra:

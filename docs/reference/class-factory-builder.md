@@ -1,3 +1,5 @@
+# FactoryBuilder Class
+
 Configures a dependency following the
 [Factory Injection](../user-guide/injection-patterns.md#factory-injection)
 pattern. This class is accessible from [rue.factory()](./rue-factory.md).
@@ -10,7 +12,7 @@ pattern. This class is accessible from [rue.factory()](./rue-factory.md).
 
 N/A
 
-## Public Methods
+## Methods
 
 ### .useFunction()
 Configures the factory function to use for a *Factory* dependency.

@@ -1,17 +1,14 @@
 # Reference
 
-## Module
+## Modules
 
-- [rue](./rue.md)
-- [rue.Container](./rue-container.md)
-- [rue.factory()](./rue-factory.md)
-- [rue.module()](./rue-module.md)
-- [rue.service()](./rue-service.md)
+- [rue](./module-rue.md)
 
 ## Classes
 
 - [Builder](./class-builder.md)
 - [Container](./class-container.md)
+- [Environment](./class-environment.md)
 - [FactoryBuilder](./class-factory-builder.md)
 - [ModuleBuilder](./class-module-builder.md)
 - [ServiceBuilder](./class-service-builder.md)

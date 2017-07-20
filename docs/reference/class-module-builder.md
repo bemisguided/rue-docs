@@ -1,3 +1,5 @@
+# ModuleBuilder Class
+
 Configures a dependency following the
 [Module Injection](../user-guide/injection-patterns.md#module-injection)
 pattern. This class is accessible from [rue.module()](./rue-module.md).
@@ -10,11 +12,12 @@ pattern. This class is accessible from [rue.module()](./rue-module.md).
 
 N/A
 
-## Public Methods
+## Methods
 
 ### .lifecycleInit()
-Configures the name of the initialization function for the *Module* dependency.
-By default, the initialization function is `init()` unless configured otherwise.
+Configures the name of the *Lifecycle Initialization* function for the *Module*
+dependency. By default, the initialization function is `init()` unless
+configured otherwise.
 
 **Signature:**
 
@@ -39,18 +42,18 @@ By default, the initialization function is `init()` unless configured otherwise.
 const rue = require('rue');
 
 rue.module('MyModule')
-  .useObject(require('./MyModule.js').factoryFunction)
+  .useModule(require('./MyModule.js').factoryFunction)
   .lifecycleInit('start')
   .done();
 ```
 
-### .useObject()
+### .useModule()
 Configures the module to use for a *Module* dependency.
 
 **Signature:**
 
 ```javascript
-.useObject(object : Object) : ModuleBuilder
+.useModule(object : Object) : ModuleBuilder
 ```
 
 **Parameters:**
@@ -70,6 +73,6 @@ Configures the module to use for a *Module* dependency.
 const rue = require('rue');
 
 rue.module('MyModule')
-  .useObject(require('./MyModule.js').factoryFunction)
+  .useModule(require('./MyModule.js').factoryFunction)
   .done();
 ```
