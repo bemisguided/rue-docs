@@ -1,5 +1,14 @@
 # Container Class
+
 Main **rue** dependency injection container.
+
+**Superclasses:**
+
+N/A
+
+**Subclasses:**
+
+N/A
 
 ## Static Properties
 
@@ -34,7 +43,7 @@ profiles names.
 **Signature:**
 
 ```javascript
-.activate(... profileNames : string) : Promise<Map<string, ?>>
+.activate(... profileNames : string) : Promise<Map<string, any>>
 ```
 
 **Parameters:**
@@ -45,16 +54,18 @@ profiles names.
 
 **Returns:**
 
-`Promise<Map<string, ?>>` promise that resolves to a map of all singleton
+`Promise<Map<string, any>>` promise that resolves to a map of all singleton
 activated dependencies.
 
 **Example:**
 
-```javascript hl_lines="4"
+```javascript hl_lines="6"
 // rue.js
 const rue = require('rue');
 
-rue.activate('profile1', 'profile2')
+let container = new rue.Container();
+
+container.activate('profile1', 'profile2')
   .then(() => {
     console.log('Application has been successfully started');
   })
@@ -92,7 +103,7 @@ it is dependent upon `DependencyB` which is a non-singleton. Either
 **Signature:**
 
 ```javascript
-.replaceInstance(name: string, replacement: ?, [parent: string]) : void
+.replaceInstance(name: string, replacement: any, parent: ?string) : void
 ```
 
 **Parameters:**
@@ -100,20 +111,28 @@ it is dependent upon `DependencyB` which is a non-singleton. Either
 | Name | Type | Attribute | Description |
 | ---- | ---- | --------- | ----------- |
 | `name` | `string` | Required | Name of the dependency to replace. |
-| `replacement` | `?` | Required | Instance to use as a replacement. |
+| `replacement` | `any` | Required | Instance to use as a replacement. |
 | `parent` | `string` | Optional | Owning dependency name of the dependency to be replaced. |
 
 **Returns:**
 
-N/A
+'any' previous dependency instance that was replaced
 
 **Example:**
 
-```javascript hl_lines="6"
+```javascript hl_lines="10"
 // rue.js
 const rue = require('rue');
 
 let replacement = {};
+let container = new rue.Container();
 
-rue.replaceInstance('MyDependency', replacement);
+container.activate()
+  .then(() => {
+    console.log('Application has been successfully started');
+    container.replaceInstance('MyDependency', replacement);
+  })
+  .catch((error) => {
+    console.log('Application has failed to be started', error);    
+  });
 ```

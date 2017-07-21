@@ -21,7 +21,7 @@ prefixed with `env:`. For example, `NODE_ENV=production` would add the profile
 **Signature:**
 
 ```javascript
-.profiles() : [string]
+.profiles() : Array<string>
 ```
 
 **Parameters:**
@@ -30,7 +30,7 @@ N/A
 
 **Returns:**
 
-`[string]` an array instance of the profile names resolved
+`Array<string>` an array instance of the profile names resolved
 
 **Example:**
 

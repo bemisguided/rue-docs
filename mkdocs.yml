@@ -23,6 +23,7 @@ pages:
         - 'FactoryBuilder': 'reference/class-factory-builder.md'
         - 'ModuleBuilder': 'reference/class-module-builder.md'
         - 'ServiceBuilder': 'reference/class-service-builder.md'
+        - 'TestContainer': 'reference/class-test-container.md'
     - License: license.md
 
 extra:

@@ -23,12 +23,78 @@ rue.environment : Environment
 // rue.js
 const rue = require('rue');
 
-rue.factory('MyFactory')
-  .useFunction(require('./MyFactory.js').factoryFunction)
-  .done();
+let profiles = rue.environment.profiles();
+rue.activate(profiles)
+  .then(() => {
+    console.log('Application has been successfully started');
+  })
+  .catch((error) => {
+    console.log('Application has failed to be started', error);    
+  });
+```
+
+### .test
+Access the [TestContainer](./class-test-container.md) for the singleton **rue**
+dependency injection container.
+
+**Signature:**
+
+```javascript
+rue.test : Environment
+```
+
+**Returns:**
+
+[TestContainer](./class-test-container.md) singleton instance
+
+**Example:**
+
+```javascript hl_lines="4"
+// rue.js
+const rue = require('rue');
+
+let testContainer = rue.test;
+let stub = {};
+testContainer.swap('name', stub);
 ```
 
 ## Methods
+
+### .activate()
+Activates the singleton dependency injection container for a given array of
+activation profiles names.
+
+**Signature:**
+
+```javascript
+.activate(... profileNames : string) : Promise<Map<string, any>>
+```
+
+**Parameters:**
+
+| Name | Type | Attribute | Description |
+| ---- | ---- | --------- | ----------- |
+| `profileNames` | `... string` | Optional | One or more activation profile names. |
+
+**Returns:**
+
+`Promise<Map<string, any>>` promise that resolves to a map of all singleton
+activated dependencies.
+
+**Example:**
+
+```javascript hl_lines="4"
+// rue.js
+const rue = require('rue');
+
+rue.activate('profile1', 'profile2')
+  .then(() => {
+    console.log('Application has been successfully started');
+  })
+  .catch((error) => {
+    console.log('Application has failed to be started', error);    
+  });
+```
 
 ### .factory()
 Starts the configuration of a dependency following the
@@ -46,7 +112,7 @@ rue.factory(name : string, container: Container) : FactoryBuilder
 | Name | Type | Attribute | Description |
 | ---- | ---- | --------- | ----------- |
 | `name` | `string` | Required | Name of the dependency. |
-| `container` | [Container](./class-container.md) | Optional | **rue** dependency injection container to configure the dependency in. If omitted the singleton [rue](./rue.md) container is used |
+| `container` | [Container](./class-container.md) | Optional | **rue** dependency injection container to configure the dependency in. If omitted the singleton **rue** dependency injection container is used. |
 
 **Returns:**
 
@@ -79,7 +145,7 @@ rue.module(name : string, container: Container) : FactoryBuilder
 | Name | Type | Attribute | Description |
 | ---- | ---- | --------- | ----------- |
 | `name` | `string` | Required | Name of the dependency. |
-| `container` | [Container](./class-container.md) | Optional | **rue** dependency injection container to configure the dependency in. If omitted the singleton [rue](./rue.md) container is used |
+| `container` | [Container](./class-container.md) | Optional | **rue** dependency injection container to configure the dependency in. If omitted the singleton **rue** dependency injection container is used. |
 
 **Returns:**
 
@@ -112,7 +178,7 @@ rue.service(name : string, container: Container) : FactoryBuilder
 | Name | Type | Attribute | Description |
 | ---- | ---- | --------- | ----------- |
 | `name` | `string` | Required | Name of the dependency. |
-| `container` | [Container](./class-container.md) | Optional | **rue** dependency injection container to configure the dependency in. If omitted the singleton [rue](./rue.md) container is used |
+| `container` | [Container](./class-container.md) | Optional | **rue** dependency injection container to configure the dependency in. If omitted the singleton **rue** dependency injection container is used. |
 
 **Returns:**
 
