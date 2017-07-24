@@ -116,7 +116,7 @@ it is dependent upon `DependencyB` which is a non-singleton. Either
 
 **Returns:**
 
-'any' previous dependency instance that was replaced
+`any` previous dependency instance that was replaced
 
 **Example:**
 

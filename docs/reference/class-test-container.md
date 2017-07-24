@@ -27,6 +27,37 @@ new TestContainer(container: ?Container);
 
 
 ## Methods
+### .resetSwaps()
+Reverts all swapped dependencies to their original dependency instance for the
+the dependency injection container.
+
+**Signature:**
+
+```javascript
+.resetSwaps() : void
+```
+
+**Parameters:**
+
+N/A
+
+**Returns:**
+
+N/A
+
+**Example:**
+
+```javascript hl_lines="9"
+// rue.js
+const rue = require('rue');
+
+let container = new rue.Container();
+let testContainer = new TestContainer(container);
+let stub = {};
+
+testContainer.swap('MyDependency', stub);
+testContainer.reset();
+```
 
 ### .swap()
 Swaps a dependency to allow for stubbing or mocking in tests. When tests are
