@@ -2,7 +2,7 @@
 
 Configures a dependency following the
 [Module Injection](../user-guide/injection-patterns.md#module-injection)
-pattern. This class is accessible from [rue.module()](./rue-module.md).
+pattern. This class is accessible from [rue.module()](./module-rue.md#module).
 
 **Superclasses:**
 

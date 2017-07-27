@@ -2,7 +2,7 @@
 
 Configures a dependency following the
 [Service Injection](../user-guide/injection-patterns.md#service-injection)
-pattern. This class is accessible from [rue.service()](./rue-service.md).
+pattern. This class is accessible from [rue.service()](./module-rue.md#service).
 
 ## Methods
 

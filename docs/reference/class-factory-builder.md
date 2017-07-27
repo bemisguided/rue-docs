@@ -2,7 +2,7 @@
 
 Configures a dependency following the
 [Factory Injection](../user-guide/injection-patterns.md#factory-injection)
-pattern. This class is accessible from [rue.factory()](./rue-factory.md).
+pattern. This class is accessible from [rue.factory()](./module-rue.md#factory).
 
 **Superclasses:**
 

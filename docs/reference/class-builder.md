@@ -6,10 +6,10 @@ Base class for all **rue** configuration builders.
 
 N/A
 
-**Subclasses:**
+**Subclasses:** 
 
 [FactoryBuilder](./class-factory-builder.md),
-[ModuleBuilder](./class-moduel-builder.md),
+[ModuleBuilder](./class-module-builder.md),
 [ServiceBuilder](./class-service-builder.md)
 
 ## Methods
